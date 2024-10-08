@@ -1,0 +1,94 @@
+name: customer
+tables:
+  - name: CUSTOMER
+    description: Customer data as defined by TPC-H
+    base_table:
+      database: SNOWFLAKE_SAMPLE_DATA
+      schema: TPCH_SF1000
+      table: CUSTOMER
+    dimensions:
+      - name: C_NAME
+        synonyms:
+          - '  '
+        description: Customer Identification Number__
+        expr: C_NAME
+        data_type: TEXT
+        sample_values:
+          - Customer#071086865
+          - Customer#071087074
+          - Customer#071086975
+      - name: C_ADDRESS
+        synonyms:
+          - '  '
+        description: Customer Address Information__
+        expr: C_ADDRESS
+        data_type: TEXT
+        sample_values:
+          - h2Urv W0vlrgmI3t
+          - bhz6bcOLnApqfg3krn,t7o2xGgH8SLp
+          - gUM3uPfJzN85V53DSjn4KGLy5q8
+      - name: C_PHONE
+        synonyms:
+          - '  '
+        description: Customer phone numbers.__
+        expr: C_PHONE
+        data_type: TEXT
+        sample_values:
+          - 29-790-523-2306
+          - 26-419-434-9934
+          - 24-321-449-5919
+      - name: C_MKTSEGMENT
+        synonyms:
+          - '  '
+        description: Market Segment__
+        expr: C_MKTSEGMENT
+        data_type: TEXT
+        sample_values:
+          - BUILDING
+          - FURNITURE
+          - AUTOMOBILE
+      - name: C_COMMENT
+        synonyms:
+          - '  '
+        description: This column appears to contain customer comments or feedback,
+          possibly related to financial transactions or account management.__
+        expr: C_COMMENT
+        data_type: TEXT
+        sample_values:
+          - 'uickly. carefully final requests hang carefully regular excuses: blithely
+            express platelets use carefully. fina'
+          - ar realms boost. boldly regular deposits boost along t
+          - ost carefully. final excuses about the unusual accounts snooze slyly according
+            to the s
+    measures:
+      - name: C_CUSTKEY
+        synonyms:
+          - '  '
+        description: Unique Customer Identifier__
+        expr: C_CUSTKEY
+        data_type: NUMBER
+        sample_values:
+          - '69086867'
+          - '70236867'
+          - '70236943'
+      - name: C_NATIONKEY
+        synonyms:
+          - '  '
+        description: Unique identifier for each customer, representing the nation
+          key.__
+        expr: C_NATIONKEY
+        data_type: NUMBER
+        sample_values:
+          - '10'
+          - '18'
+          - '22'
+      - name: C_ACCTBAL
+        synonyms:
+          - '  '
+        description: Account Balance__
+        expr: C_ACCTBAL
+        data_type: NUMBER
+        sample_values:
+          - '3976.69'
+          - '2491.35'
+          - '2921.48'
