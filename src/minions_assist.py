@@ -96,12 +96,14 @@ def display_content(content: list, message_index: int = None) -> None:
                     st.markdown(summarize_data(df))
 
                     # Download button for the dataset
-                    csv = df.to_csv(index=False)
+                    csv = df.to_csv(index=False).encode('utf-8')
                     st.download_button(
-                        label="Download Dataset as CSV",
-                        data=csv,
-                        file_name='customer_data.csv',
-                        mime='text/csv',
+                    label="Download data as CSV",
+                    data=csv,
+                    file_name='query_results.csv',
+                    mime='text/csv',
+                    key=f"download_button_{message_index}"
+                    
                     )
 
                     # Visualizations in separate tabs
